@@ -56,6 +56,7 @@ set list listchars=tab:»·,trail:·
 
 " Filetypes
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+au BufRead,BufNewFile {*.go} set noexpandtab
 
 " Set the keys to turn spell checking on/off
 map <F7> <Esc>:setlocal spell spelllang=sv<CR>
