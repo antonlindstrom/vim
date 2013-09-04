@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Anton Lindstrom's .vimrc
 "
-" http://code.antonlindstrom.com/Vimrc
+" http://github.com/antonlindstrom/vim
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 " Getting rid of vi bugs and turns syntax highlighting on
