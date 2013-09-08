@@ -1,8 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""
-" Anton Lindstrom's .vimrc
-"
-" http://github.com/antonlindstrom/vim
-""""""""""""""""""""""""""""""""""""""""""""""""
+" Source: http://github.com/antonlindstrom/vim
 
 " Getting rid of vi bugs and turns syntax highlighting on
 set nocompatible
