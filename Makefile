@@ -1,4 +1,6 @@
-all:
+all: bootstrap links
+
+links:
 	cp -a ./vim/. ~/.vim
 	cp -a ./vimrc ~/.vimrc
 
