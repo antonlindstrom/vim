@@ -43,6 +43,10 @@ set showtabline=2 " Always show tab bar
 set backupdir=~/.vim/backup " Backupfiles
 set directory=~/.vim/tmp " Swapfiles
 
+" General
+set encoding=utf-8
+set textwidth=78
+
 " Solarized https://github.com/altercation/vim-colors-solarized
 set background=dark
 colorscheme solarized
