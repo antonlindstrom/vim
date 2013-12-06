@@ -17,7 +17,6 @@ set shiftround
 set expandtab
 set nowrap
 set preserveindent
-set pastetoggle=<F12> "Press <F12> when paste-alot
 
 " VIM UI
 filetype on
