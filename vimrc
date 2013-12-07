@@ -23,7 +23,6 @@ filetype on
 filetype plugin on
 set ch=2
 set wildmenu
-"set t_Co=256 "256 colors
 set number " Line numbers
 set report=0 " Do not show changes
 set showmatch
