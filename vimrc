@@ -1,5 +1,3 @@
-" Source: http://github.com/antonlindstrom/vim
-
 " Getting rid of vi bugs and turns syntax highlighting on
 set nocompatible
 syntax on
