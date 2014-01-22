@@ -47,7 +47,19 @@ set textwidth=78
 set background=dark
 colorscheme solarized
 
-" Trailing whitespaces
+" Folds, this is damn nice
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+nnoremap <space> za
+set foldmethod=indent
+
+" ctrlp.vim - https://github.com/kien/ctrlp.vim
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|\.(o|swp|pyc|egg)$'
+
 set list listchars=tab:»·,trail:·
 
 " Filetypes
