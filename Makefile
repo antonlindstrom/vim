@@ -5,8 +5,8 @@ links:
 	cp -a ./vimrc ~/.vimrc
 
 bootstrap:
-	mkdir ~/.vim/backup
-	mkdir ~/.vim/tmp
+	mkdir -p ~/.vim/backup
+	mkdir -p ~/.vim/tmp
 
 destroy:
 	rm ~/.vimrc
