@@ -5,7 +5,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
-
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/vim-easy-align'
@@ -14,7 +13,6 @@ Plug 'powerline/powerline'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-markdown'
-Plug 'fatih/vim-go'
 Plug 'fatih/vim-go'
 Plug 'rodjek/vim-puppet'
 Plug 'elzr/vim-json'
@@ -40,6 +38,7 @@ let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|\.(o|swp|pyc|egg)$'
 
 set background=dark
 try
+    let g:solarized_termcolors=256
     colorscheme solarized
 catch
 endtry
@@ -48,7 +47,6 @@ endtry
 " " VIM
 "
 
-" Getting rid of vi bugs and turns syntax highlighting on
 set nocompatible
 syntax on
 
@@ -91,8 +89,6 @@ set directory=~/.vim/tmp " Swapfiles
 set undofile
 set undodir=~/.vim/tmp
 
-set t_Co=256
-
 " General
 set encoding=utf-8
 set textwidth=78
@@ -109,6 +105,9 @@ set list listchars=tab:»·,trail:·
 " Filetypes
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile {*.c,*.go} set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+
+" Toggle background color
+call togglebg#map("<F5>")
 
 " Set the keys to turn spell checking on/off
 map <F7> <Esc>:setlocal spell spelllang=sv<CR>
