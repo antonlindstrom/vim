@@ -39,6 +39,7 @@ let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|\.(o|swp|pyc|egg)$'
 set background=dark
 try
     let g:solarized_termcolors=256
+    let g:solarized_style=dark
     colorscheme solarized
 catch
 endtry
