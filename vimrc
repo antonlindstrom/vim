@@ -1,3 +1,53 @@
+"
+" " Plugins
+"
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/vim-easy-align'
+Plug 'scrooloose/syntastic'
+Plug 'powerline/powerline'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-markdown'
+Plug 'fatih/vim-go'
+Plug 'fatih/vim-go'
+Plug 'rodjek/vim-puppet'
+Plug 'elzr/vim-json'
+
+call plug#end()
+
+"
+" " Plugin settings
+"
+
+" Easy align interactive
+vnoremap <silent> <Enter> :EasyAlign<cr>
+
+" ctrlp.vim
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|\.(o|swp|pyc|egg)$'
+
+"
+" " Theme
+"
+
+set background=dark
+try
+    colorscheme solarized
+catch
+endtry
+
+"
+" " VIM
+"
+
 " Getting rid of vi bugs and turns syntax highlighting on
 set nocompatible
 syntax on
@@ -38,14 +88,14 @@ set mat=5       " duration to show matching brace (1/10 sec)
 set showtabline=2 " Always show tab bar
 set backupdir=~/.vim/backup " Backupfiles
 set directory=~/.vim/tmp " Swapfiles
+set undofile
+set undodir=~/.vim/tmp
+
+set t_Co=256
 
 " General
 set encoding=utf-8
 set textwidth=78
-
-" Solarized https://github.com/altercation/vim-colors-solarized
-set background=dark
-colorscheme solarized
 
 " Folds, this is damn nice
 set foldenable
@@ -54,17 +104,11 @@ set foldnestmax=10
 nnoremap <space> za
 set foldmethod=indent
 
-" ctrlp.vim - https://github.com/kien/ctrlp.vim
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|\.(o|swp|pyc|egg)$'
-
 set list listchars=tab:»·,trail:·
 
 " Filetypes
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
-au BufRead,BufNewFile {*.go} set noexpandtab
+au BufRead,BufNewFile {*.c,*.go} set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
 
 " Set the keys to turn spell checking on/off
 map <F7> <Esc>:setlocal spell spelllang=sv<CR>
