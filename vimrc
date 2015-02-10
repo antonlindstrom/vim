@@ -49,7 +49,7 @@ endtry
 
 set background=dark
 try
-  let g:solarized_termcolors=16
+  let g:solarized_termcolors = 256
   colorscheme solarized
 
   " Toggle background color
