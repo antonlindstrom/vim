@@ -15,4 +15,4 @@ plug:
 
 destroy:
 	rm ~/.vimrc
-	rm -r ~/.vim
+	rm -rf ~/.vim
