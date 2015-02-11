@@ -43,6 +43,13 @@ try
   "let g:cpp_experimental_template_highlight = 1
 catch
 endtry
+
+" JSON
+try
+  let g:vim_json_syntax_conceal = 0
+catch
+endtry
+
 "
 " " Theme
 "
