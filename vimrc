@@ -11,13 +11,19 @@ Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
-Plug 'msanders/snipmate.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
+
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+
+Plug 'ervandew/supertab'
 
 call plug#end()
 
@@ -143,7 +149,8 @@ set list listchars=tab:»·,trail:·
 
 " Filetypes
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
-au BufRead,BufNewFile {*.c,*.go} set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+au BufRead,BufNewFile {*.html,*.css,*.js} set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+au BufRead,BufNewFile {*.c,*.go,*.bash,*.sh} set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
 
 " Set the keys to turn spell checking on/off
 map <F7> <Esc>:setlocal spell spelllang=sv<CR>
