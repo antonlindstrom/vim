@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
+Plug 'axiom/vim-memcolo'
 Plug 'bling/vim-airline'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
@@ -15,6 +16,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tclh123/vim-thrift'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 
@@ -95,11 +97,11 @@ set history=1000
 " Indent
 set autoindent
 set smartindent
-set softtabstop=2
-set shiftwidth=2
-set tabstop=2
+set softtabstop=8
+set shiftwidth=8
+set tabstop=8
 set shiftround
-set expandtab
+set noexpandtab
 set nowrap
 set preserveindent
 
@@ -126,12 +128,16 @@ set showtabline=2 " Always show tab bar
 set backupdir=~/.vim/backup " Backupfiles
 set directory=~/.vim/tmp " Swapfiles
 
+" autocomplete
+set omnifunc=syntaxcomplete#Complete
+
 if v:version >= 703
   set undofile
   set undodir=~/.vim/undofiles
 
   " paint the max line
-  " set colorcolumn=+1
+  "highlight ColorColumn ctermbg=131
+  "call matchadd('ColorColumn', '\%79v', 100)
 endif
 
 " General
@@ -149,8 +155,7 @@ set list listchars=tab:»·,trail:·
 
 " Filetypes
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
-au BufRead,BufNewFile {*.html,*.css,*.js} set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-au BufRead,BufNewFile {*.c,*.go,*.bash,*.sh} set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+au BufRead,BufNewFile {*.html,*.css,*.js,*.rb} set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Set the keys to turn spell checking on/off
 map <F7> <Esc>:setlocal spell spelllang=sv<CR>
