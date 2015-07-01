@@ -157,6 +157,12 @@ set list listchars=tab:»·,trail:·
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile {*.html,*.css,*.js,*.rb} set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
+" Turn on and off search highlighting
+" switch higlight no matter the previous state
+nmap <F1> :set hls! <cr>
+" hit '/' highlights then enter search mode
+nnoremap / :set hlsearch<cr>/
+
 " Set the keys to turn spell checking on/off
 map <F7> <Esc>:setlocal spell spelllang=sv<CR>
 map <F8> <Esc>:setlocal spell spelllang=en_us<CR>
