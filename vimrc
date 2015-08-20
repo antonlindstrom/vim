@@ -19,6 +19,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tclh123/vim-thrift'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
+Plug 'wimstefan/Lightning'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
