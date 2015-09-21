@@ -11,6 +11,7 @@ Plug 'bling/vim-airline'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
 Plug 'junegunn/vim-easy-align'
+Plug 'keith/swift.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rodjek/vim-puppet'
@@ -19,6 +20,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tclh123/vim-thrift'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-sleuth'
 Plug 'wimstefan/Lightning'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -63,14 +65,19 @@ endtry
 " " Theme
 "
 
-set background=dark
 try
-  let g:solarized_termtrans = 1
-  let g:solarized_termcolors = 256
-  colorscheme solarized
+  " Switch bright/dark theme
+  function! ToggleColorScheme()
+    if (g:colors_name == "lightning")
+      colorscheme solarized
+      set background=dark
+    else
+      colorscheme lightning
+    endif
+  endfunc
 
-  " Toggle background color
-  call togglebg#map("<F5>")
+  "Set F6 to toggle
+  nmap <silent> <F5> :call ToggleColorScheme()<CR>
 catch
 endtry
 
@@ -168,3 +175,6 @@ nnoremap / :set hlsearch<cr>/
 map <F7> <Esc>:setlocal spell spelllang=sv<CR>
 map <F8> <Esc>:setlocal spell spelllang=en_us<CR>
 map <F9> <Esc>:setlocal nospell<CR>
+
+" Remap ESC to jj
+inoremap jj <ESC>
