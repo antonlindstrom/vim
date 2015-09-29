@@ -4,19 +4,21 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 Plug 'axiom/vim-memcolo'
 Plug 'bling/vim-airline'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
+Plug 'gilgigilgil/anderson.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'keith/swift.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'sickill/vim-monokai'
 Plug 'tclh123/vim-thrift'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
@@ -61,6 +63,16 @@ try
 catch
 endtry
 
+" Go
+try
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_highlight_structs = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_build_constraints = 1
+catch
+endtry
+
 "
 " " Theme
 "
@@ -69,8 +81,8 @@ try
   " Switch bright/dark theme
   function! ToggleColorScheme()
     if (g:colors_name == "lightning")
-      colorscheme solarized
-      set background=dark
+      set background=light
+      colorscheme anderson
     else
       colorscheme lightning
     endif
@@ -88,7 +100,7 @@ try
   let g:airline_left_sep=''
   let g:airline_right_sep=''
 
-  let g:airline_theme = 'solarized'
+  "let g:airline_theme = 'solarized'
 catch
 endtry
 
@@ -123,7 +135,7 @@ set report=0 " Do not show changes
 set showmatch
 set ruler
 set incsearch
-set ignorecase " Ignore case on search
+set smartcase
 set backspace=2
 set whichwrap+=<,>,[,],h,l
 set shortmess=atI
@@ -170,6 +182,9 @@ au BufRead,BufNewFile {*.html,*.css,*.js,*.rb} set tabstop=2 softtabstop=2 shift
 nmap <F1> :set hls! <cr>
 " hit '/' highlights then enter search mode
 nnoremap / :set hlsearch<cr>/
+
+" Set tagbar toggle
+nmap <F6> :TagbarToggle<CR>
 
 " Set the keys to turn spell checking on/off
 map <F7> <Esc>:setlocal spell spelllang=sv<CR>
