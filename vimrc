@@ -20,6 +20,7 @@ Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sickill/vim-monokai'
 Plug 'tclh123/vim-thrift'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-sleuth'
@@ -73,6 +74,15 @@ try
 catch
 endtry
 
+" Syntastic CPP
+try
+  " CPP linter
+  let g:syntastic_cpp_cpplint_exec = 'cpplint'
+  let g:syntastic_cpp_checkers = ['gcc', 'cpplint']
+  let g:syntastic_cpp_compiler_options = ' -std=c++11'
+catch
+endtry
+
 "
 " " Theme
 "
@@ -81,14 +91,13 @@ try
   " Switch bright/dark theme
   function! ToggleColorScheme()
     if (g:colors_name == "lightning")
-      set background=light
-      colorscheme anderson
+      colorscheme monokai
     else
       colorscheme lightning
     endif
   endfunc
 
-  "Set F6 to toggle
+  "Set F5 to toggle
   nmap <silent> <F5> :call ToggleColorScheme()<CR>
 catch
 endtry
